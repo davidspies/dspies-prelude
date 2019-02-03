@@ -1,0 +1,75 @@
+name:                dspies-prelude
+version:             0.1.0.0
+github:              "davidspies/dspies-prelude"
+license:             BSD3
+author:              "David Spies"
+maintainer:          "dnspies@gmail.com"
+copyright:           "2019 David Spies"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category: Web
+
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/davidspies/dspies-prelude#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- constraints
+- containers
+- extra
+- mtl
+- text
+
+ghc-options:
+- -Werror
+- -Wall
+
+default-extensions:
+- BangPatterns
+- ConstraintKinds
+- DataKinds
+- DeriveFoldable
+- DeriveFunctor
+- DeriveGeneric
+- DeriveLift
+- DeriveTraversable
+- DerivingStrategies
+- DerivingVia
+- EmptyCase
+- ExistentialQuantification
+- FlexibleContexts
+- FlexibleInstances
+- FunctionalDependencies
+- GADTs
+- GeneralizedNewtypeDeriving
+- InstanceSigs
+- KindSignatures
+- LambdaCase
+- MultiParamTypeClasses
+- MultiWayIf
+- NamedFieldPuns
+- NoImplicitPrelude
+- OverloadedStrings
+- QuantifiedConstraints
+- RankNTypes
+- RecordWildCards
+- ScopedTypeVariables
+- StandaloneDeriving
+- TupleSections
+- TypeApplications
+- TypeFamilyDependencies
+- TypeFamilies
+- TypeOperators
+- TypeSynonymInstances
+- ViewPatterns
+
+library:
+  source-dirs: src
