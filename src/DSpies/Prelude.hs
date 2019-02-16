@@ -69,7 +69,13 @@ import           Data.Functor.Compose          as X
 import           Data.Functor.Identity         as X
 import           Data.Kind                     as X
                                                 ( Type )
+import           Data.DList                    as X
+                                                ( DList )
 import           Data.List                     as X
+import           Data.List.NonEmpty            as X
+                                                ( NonEmpty(..)
+                                                , nonEmpty
+                                                )
 import           Data.Map                      as X
                                                 ( Map )
 import           Data.Maybe                    as X
