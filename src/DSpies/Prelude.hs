@@ -67,6 +67,8 @@ import           Data.Foldable                 as X
 import           Data.Function                 as X
 import           Data.Functor.Compose          as X
 import           Data.Functor.Identity         as X
+import           Data.Kind                     as X
+                                                ( Type )
 import           Data.List                     as X
 import           Data.Map                      as X
                                                 ( Map )
@@ -75,8 +77,11 @@ import           Data.Maybe                    as X
 import           Data.Proxy                    as X
 import           Data.Set                      as X
                                                 ( Set )
+import           Data.String                   as X
+                                                ( IsString )
 import           Data.Text                     as X
                                                 ( Text )
+import           Data.Void                     as X
 import           GHC.Generics                  as X
                                                 ( Generic )
 import           GHC.Stack                     as X
