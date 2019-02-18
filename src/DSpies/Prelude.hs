@@ -5,6 +5,7 @@ module DSpies.Prelude
   , eitherErrorShowId
   , firstF
   , fromJust
+  , mapErrors
   , secondF
   , zipExact
   , zipExactWith
@@ -48,7 +49,9 @@ import           Control.Monad.State           as X
                                                 , runStateT
                                                 )
 import           Control.Monad.Trans           as X
-                                                ( MonadTrans )
+                                                ( MonadTrans
+                                                , lift
+                                                )
 import           Control.Monad.Writer          as X
                                                 ( MonadWriter
                                                 , Writer
@@ -93,6 +96,9 @@ import           GHC.Generics                  as X
 import           GHC.Stack                     as X
                                                 ( HasCallStack )
 
+import           DSpies.Error.Combine          as X
+import           DSpies.Error.DList            as X
+
 firstF :: Functor f => (a -> f c) -> (a, b) -> f (c, b)
 firstF fn (x, y) = (, y) <$> fn x
 
@@ -127,3 +133,8 @@ zipExact = zipExactWith (,)
 -- | For use with DerivingVia
 newtype Transformed t (m :: * -> *) a = Transformed (t m a)
   deriving (Functor, Applicative, Monad, MonadIO, MonadTrans)
+
+mapErrors :: (MonadError err m) => (errsub -> err) -> ExceptT errsub m a -> m a
+mapErrors errfn act = runExceptT act >>= \case
+  Left  err -> throwError $ errfn err
+  Right val -> return val
