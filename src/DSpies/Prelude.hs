@@ -98,6 +98,7 @@ import           GHC.Stack                     as X
 
 import           DSpies.Error.Combine          as X
 import           DSpies.Error.DList            as X
+import           DSpies.FWrapped               as X
 
 firstF :: Functor f => (a -> f c) -> (a, b) -> f (c, b)
 firstF fn (x, y) = (, y) <$> fn x
