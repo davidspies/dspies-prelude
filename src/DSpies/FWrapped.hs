@@ -1,11 +1,14 @@
-module DSpies.FWrapped where
+module DSpies.FWrapped
+  ( FWrapped(..)
+  )
+where
 
 import           Control.Applicative            ( liftA2 )
 import           Prelude
 
 -- | For use with DerivingVia
 newtype FWrapped f a = FWrapped (f a)
-  deriving (Functor, Applicative)
+  deriving (Functor, Applicative) via f
 
 instance (Applicative f, Num a) => Num (FWrapped f a) where
   (+)         = liftA2 (+)
@@ -50,5 +53,4 @@ instance (Applicative f, Semigroup a) => Semigroup (FWrapped f a) where
 
 instance (Applicative f, Monoid a) => Monoid (FWrapped f a) where
   mempty  = pure mempty
-  mappend = liftA2 mappend
   mconcat = fmap mconcat . sequenceA

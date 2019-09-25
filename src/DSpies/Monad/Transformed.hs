@@ -37,13 +37,15 @@ import           Control.Monad.Writer           ( MonadWriter
                                                 )
 import qualified Control.Monad.Writer          as Writer
 import           Data.Bifunctor                 ( first )
+import           Data.Kind                      ( Type )
 import           Data.Proxy                     ( Proxy(Proxy) )
 
 -- | For use with DerivingVia
-newtype Transformed t (m :: * -> *) a = Transformed {unTransformed :: t m a}
-  deriving ( Functor, Applicative, Monad, MonadIO, MonadTrans, MonadTransControl
+newtype Transformed t (m :: Type -> Type) a = Transformed {unTransformed :: t m a}
+  deriving ( Functor, Applicative, Monad, MonadIO) via (t m)
+  deriving ( MonadTrans, MonadTransControl
            , TransStateFunctor, TransStatePass, TransStateApply
-           )
+           ) via t
 
 liftWithCarry
   :: (MonadTransControl t, Monad m, Monad (t m))
