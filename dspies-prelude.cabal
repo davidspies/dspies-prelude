@@ -1,0 +1,50 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e025ce48b0fec43b43b5c57b06c7defa9cb7421e7f4106ded535054ad91b4ee7
+
+name:           dspies-prelude
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/davidspies/dspies-prelude#readme>
+homepage:       https://github.com/davidspies/dspies-prelude#readme
+bug-reports:    https://github.com/davidspies/dspies-prelude/issues
+author:         David Spies
+maintainer:     dnspies@gmail.com
+copyright:      2019 David Spies
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/davidspies/dspies-prelude
+
+library
+  exposed-modules:
+      DSpies.Error.Combine
+      DSpies.Error.DList
+      DSpies.FWrapped
+      DSpies.Monad.Transformed
+      DSpies.Prelude
+  other-modules:
+      Paths_dspies_prelude
+  hs-source-dirs:
+      src
+  default-extensions: BangPatterns ConstraintKinds DataKinds DeriveFoldable DeriveFunctor DeriveGeneric DeriveLift DeriveTraversable DerivingStrategies DerivingVia EmptyCase ExistentialQuantification FlexibleContexts FlexibleInstances FunctionalDependencies GADTs InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns NoImplicitPrelude OverloadedStrings QuantifiedConstraints RankNTypes RecordWildCards Safe ScopedTypeVariables StandaloneDeriving TupleSections TypeApplications TypeFamilyDependencies TypeFamilies TypeOperators TypeSynonymInstances ViewPatterns
+  ghc-options: -Werror -Weverything -Wno-missing-import-lists -Wno-safe
+  build-depends:
+      base >=4.7 && <5
+    , constraints
+    , containers
+    , dlist
+    , extra
+    , monad-control
+    , mtl
+    , text
+  default-language: Haskell2010
