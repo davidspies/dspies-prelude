@@ -39,7 +39,7 @@ errOp op x y =
     `op` y
 
 newtype CombineT m a = CombineT {unCombineT :: m a}
-  deriving (Functor)
+  deriving stock Functor
 
 instance CombinableErrors m => Applicative (CombineT m) where
   pure = CombineT . pure
