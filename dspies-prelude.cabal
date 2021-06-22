@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e025ce48b0fec43b43b5c57b06c7defa9cb7421e7f4106ded535054ad91b4ee7
+-- hash: 75fef107917c71b6822b7d8621b04501e1d1f65f6b68c75298fb6ae3caae34fb
 
 name:           dspies-prelude
 version:        0.1.0.0
@@ -36,8 +36,45 @@ library
       Paths_dspies_prelude
   hs-source-dirs:
       src
-  default-extensions: BangPatterns ConstraintKinds DataKinds DeriveFoldable DeriveFunctor DeriveGeneric DeriveLift DeriveTraversable DerivingStrategies DerivingVia EmptyCase ExistentialQuantification FlexibleContexts FlexibleInstances FunctionalDependencies GADTs InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns NoImplicitPrelude OverloadedStrings QuantifiedConstraints RankNTypes RecordWildCards Safe ScopedTypeVariables StandaloneDeriving TupleSections TypeApplications TypeFamilyDependencies TypeFamilies TypeOperators TypeSynonymInstances ViewPatterns
-  ghc-options: -Werror -Weverything -Wno-missing-import-lists -Wno-safe
+  default-extensions:
+      BangPatterns
+      ConstraintKinds
+      DataKinds
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveLift
+      DeriveTraversable
+      DerivingStrategies
+      DerivingVia
+      EmptyCase
+      ExistentialQuantification
+      FlexibleContexts
+      FlexibleInstances
+      FunctionalDependencies
+      GADTs
+      InstanceSigs
+      KindSignatures
+      LambdaCase
+      MultiParamTypeClasses
+      MultiWayIf
+      NamedFieldPuns
+      NoImplicitPrelude
+      OverloadedStrings
+      QuantifiedConstraints
+      RankNTypes
+      RecordWildCards
+      Safe
+      ScopedTypeVariables
+      StandaloneDeriving
+      TupleSections
+      TypeApplications
+      TypeFamilyDependencies
+      TypeFamilies
+      TypeOperators
+      TypeSynonymInstances
+      ViewPatterns
+  ghc-options: -Werror -Weverything -Wno-prepositive-qualified-module -Wno-missing-import-lists -Wno-safe
   build-depends:
       base >=4.7 && <5
     , constraints

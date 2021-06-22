@@ -1,16 +1,15 @@
 module DSpies.Error.DList
-  ( ExceptTDL
-  , runExceptTDL
-  , throwErrorElem
+  ( ExceptTDL,
+    runExceptTDL,
+    throwErrorElem,
   )
 where
 
-import           Prelude
-
-import           Control.Monad.Except
-import           Data.Bifunctor                 ( first )
-import           Data.DList                     ( DList )
-import qualified Data.DList                    as DList
+import Control.Monad.Except
+import Data.Bifunctor (first)
+import Data.DList (DList)
+import qualified Data.DList as DList
+import Prelude
 
 type ExceptTDL err = ExceptT (DList err)
 

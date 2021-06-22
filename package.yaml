@@ -32,6 +32,7 @@ dependencies:
 ghc-options:
   - -Werror
   - -Weverything
+  - -Wno-prepositive-qualified-module
   - -Wno-missing-import-lists
   - -Wno-safe
 
